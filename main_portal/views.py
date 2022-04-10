@@ -29,6 +29,8 @@ def get_profile(request):
         if form.is_valid():
             email = form.cleaned_data['email']
             record = get_record_by_email(email)
+            if record is None:
+                return HttpResponse("We could not find an account with that email. Please try another email or join the CMU T&E community here: www.cmute.io") 
             formatted_profile = format_profile(record['fields'])
             return render(request, 'main_portal/show_profile.html', {'profile_data': formatted_profile})
 
