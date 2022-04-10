@@ -1,7 +1,20 @@
+<html>
+    <head>
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        {% load crispy_forms_tags %}  
 
-<h1>CMU T&E Member Portal - Booyah baby!</h1>
-<form action = "" method = "post">
-    {% csrf_token %}
-    {{form }}
-    <input type="submit" value="Submit">
-</form>
+        <h1>CMU T&E Member Portal - Booyah baby!</h1>
+        <form action = "" method = "post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    {{form|crispy}}
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
